@@ -6,7 +6,7 @@ const token = localStorage.getItem('token');
    const response = await fetch('http://localhost:3000/notes', {
       method: 'GET',
       headers: {
-        'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjEwY2ZiYmViNGIwNTRlY2M4MmM2NDgiLCJpYXQiOjE3MTIzODI3ODJ9.Klg6qE2Clt4K3GG3lwTErSOEG7XP7Zn3jwBeOeh10Jo"
+        'Authorization': token
       }
     })
     const data = await response.json();
@@ -19,7 +19,7 @@ const token = localStorage.getItem('token');
     const response = await fetch('http://localhost:3000/notes', {
       method: 'POST',
       headers: {
-        'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjEwY2ZiYmViNGIwNTRlY2M4MmM2NDgiLCJpYXQiOjE3MTIzODI3ODJ9.Klg6qE2Clt4K3GG3lwTErSOEG7XP7Zn3jwBeOeh10Jo",
+        'Authorization': token,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(noteToSave)
@@ -32,13 +32,15 @@ const token = localStorage.getItem('token');
     const response = await fetch('http://localhost:3000/notes', {
       method: 'DELETE',
       headers: {
-        'Authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjEwY2ZiYmViNGIwNTRlY2M4MmM2NDgiLCJpYXQiOjE3MTIzODI3ODJ9.Klg6qE2Clt4K3GG3lwTErSOEG7XP7Zn3jwBeOeh10Jo",
+        'Authorization': token,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        _id: 'note_id_to_delete'
+        _id: id
       })
     })
     const data = await response.json();
   }
+
+
 }

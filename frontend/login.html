@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css"
+      integrity="sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- style -->
+    <link rel="stylesheet" href="login.css" />
+    <title></title>
+  </head>
+  <body>
+    <!-- scripts -->
+    <div class="login-signup l-attop" id="login">
+      <div class="login-signup-title">LOG IN</div>
+      <div class="login-signup-content">
+        <div class="input-name">
+          <h2>Email</h2>
+        </div>
+        <input
+          type="text"
+          name="email"
+          value=""
+          class="field-input log-email-input"
+        />
+        <div class="input-name input-margin">
+          <h2>Password</h2>
+        </div>
+        <input
+          type="text"
+          name="password"
+          value=""
+          class="field-input log-pass-input"
+        />
+        <div class="input-r">
+          <div class="check-input">
+            <input
+              type="checkbox"
+              id="remember-me-2"
+              name="rememberme"
+              value=""
+              class="checkme"
+            />
+            <label class="remmeberme-blue" for="remember-me-2"></label>
+          </div>
+          <div class="rememberme">
+            <label for="remember-me-2">Remember Me</label>
+          </div>
+        </div>
+        <button class="submit-btn login">Enter</button>
+      </div>
+    </div>
+
+    <div class="login-signup s-atbottom" id="signup">
+      <div class="login-signup-title">SIGN UP</div>
+      <div class="login-signup-content">
+        <div class="input-name">
+          <h2>Username</h2>
+        </div>
+        <input
+          type="text"
+          name="username"
+          value=""
+          class="field-input sign-username-input"
+        />
+        <div class="input-name input-margin">
+          <h2>E-Mail</h2>
+        </div>
+        <input
+          type="text"
+          name="email"
+          value=""
+          class="field-input sign-email-input"
+        />
+        <div class="input-name input-margin">
+          <h2>Password</h2>
+        </div>
+        <input
+          type="text"
+          name="password"
+          value=""
+          class="field-input sign-pass-input"
+        />
+
+        <button class="submit-btn signup">Enter</button>
+      </div>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -12,6 +12,10 @@ const createNote = document.querySelector(".creat-note");
 const inputContainer = document.querySelector(".input-container");
 const welcome = document.querySelector(".welcome-container");
 const clickArow = document.querySelector(".click-arrow");
+const loginBtn = document.querySelector(".login-btn");
+const signupBtn = document.querySelector(".signup-btn");
+const userLoged = document.querySelector('.user-btn-container');
+
 let isInedit = {
   editFlag: false,
   editId: null,
@@ -23,6 +27,12 @@ window.addEventListener('keydown', (e) => {
     saveNoteBtn();
   }
 });
+window.addEventListener("DOMContentLoaded", () => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    userLoged.classList.add('hide');
+  }
+})
 window.addEventListener("DOMContentLoaded", showNotes);
 addNote.addEventListener("click", createNewNote);
 saveNoteBtn.addEventListener("click", saveNote);
@@ -36,7 +46,7 @@ async function showNotes() {
   notesList.innerHTML = "";
   notes.forEach(element => {
     notesList.innerHTML += `
-    <div class="note-container ${colors[Math.floor(Math.random() * colors.length)]}" data-id="${element.id}">
+    <div class="note-container ${colors[Math.floor(Math.random() * colors.length)]}" data-id="${element._id}">
       <div class="note-small-title">${element.title}</div>
       <div class="note-small-body">
         ${element.description}
@@ -45,23 +55,28 @@ async function showNotes() {
     `;
   });
   const noteBoxes = document.querySelectorAll('.note-container');
-  noteBoxes.forEach(noteBox => {
-    noteBox.addEventListener("click", editNote);
+  notesList.addEventListener("click", function(event) {
+    const noteBox = event.target.closest('.note-container');
+    if (noteBox) {
+      editNote(noteBox);
+    }
   });
+  
 }
 
-function saveNote() {
+async function saveNote() {
   changeMain("remove");
   const note = {
     title: notesTitleInput.value,
-    body: notesBodyInput.value,
+    description: notesBodyInput.value,
   };
 
   if (isInedit.editFlag) {
-    note.id = isInedit.editId;
+    note._id = isInedit.editId;
   }
+  console.log(note)
 
-  NotesAPI.saveNote(note);
+  await NotesAPI.saveNote(note);
   notesTitleInput.value = "";
   notesBodyInput.value = "";
   showNotes();
@@ -69,24 +84,26 @@ function saveNote() {
 }
 
 
-function editNote(event) {
+async function editNote(event) {
     changeMain("add");
-  const notes = NotesAPI.getAllNotes();
-  const noteBox = event.currentTarget;
+  const notes = await NotesAPI.getAllNotes();
+  console.log(event)
+
+  const noteBox = event;
   const id = noteBox.dataset.id;
 
   notes.forEach(note => {
-    if (note.id == id) {
+    if (note._id == id) {
       notesTitleInput.value = note.title;
-      notesBodyInput.value = note.body;
+      notesBodyInput.value = note.description;
       isInedit.editFlag = true;
-      isInedit.editId = note.id;
+      isInedit.editId = note._id;
     }
   });
 }
-function deleteNote() {
+async function deleteNote() {
   changeMain("remove");
-  NotesAPI.deleteNote(isInedit.editId);
+  await NotesAPI.deleteNote(isInedit.editId);
   isInedit.editId = null;
   notesTitleInput.value = "";
   notesBodyInput.value = "";
@@ -119,3 +136,4 @@ function changeMain(options) {
     inputContainer.classList.remove("show-welcome");
   }
 }
+
