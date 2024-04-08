@@ -55,14 +55,13 @@ html,body{
 .container{
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns:  1fr 18rem;
+  display: flex;
   background-color: var(--background);
 }
 /* sidebar */
 .sidebar{
   display: none;
-  width: 100%;
+  width: 18rem;
   height: 100%;
   background-color: var(--background1);
   z-index: 1000;
@@ -354,3 +353,6 @@ html,body{
     display: flex;
   }
   
+
+
+  @med
