@@ -15,6 +15,8 @@ const clickArow = document.querySelector(".click-arrow");
 const loginBtn = document.querySelector(".login-btn");
 const signupBtn = document.querySelector(".signup-btn");
 const userLoged = document.querySelector('.user-btn-container');
+const loggedUser = document.querySelector('.logged-user');
+const logout = document.querySelector('.logout');
 
 let isInedit = {
   editFlag: false,
@@ -27,10 +29,17 @@ window.addEventListener('keydown', (e) => {
     saveNoteBtn();
   }
 });
+
+logout.addEventListener('click', () => {
+  localStorage.removeItem('token');
+  window.location.href = 'index.html';
+})
 window.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem('token');
   if (token) {
     userLoged.classList.add('hide');
+    loggedUser.classList.remove('hide');
+
   }
 })
 window.addEventListener("DOMContentLoaded", showNotes);
