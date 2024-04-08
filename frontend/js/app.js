@@ -71,6 +71,7 @@ async function showNotes() {
     const noteBox = event.target.closest('.note-container');
     if (noteBox) {
       editNote(noteBox);
+      sidebar.classList.remove("show-sidebar");
     }
   });
   
@@ -86,8 +87,6 @@ async function saveNote() {
   if (isInedit.editFlag) {
     note._id = isInedit.editId;
   }
-  console.log(note)
-
   await NotesAPI.saveNote(note);
   Toastify({
     text: "note created successfully",

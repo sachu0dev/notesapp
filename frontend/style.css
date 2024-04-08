@@ -225,6 +225,7 @@ html,body{
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  width: 100%;
 }
 .notes-title{
   font-size: 3rem;
