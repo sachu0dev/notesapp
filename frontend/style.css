@@ -65,6 +65,7 @@ html,body{
   width: 100%;
   height: 100%;
   background-color: var(--background1);
+  z-index: 1000;
 }
 .show-sidebar{
   display: block;
@@ -300,7 +301,7 @@ html,body{
   right: 0;
   overflow: hidden;
   display: none;
-  z-index: -100;
+  z-index: 1;
 }
 .show-first-note{
   display: block;
@@ -334,7 +335,7 @@ html,body{
   color: #fff;
   font-size: 2rem;
   display: none;
-  z-index: -100;
+  z-index: 1;
 }
 .creat-note img{
   width: 7rem;
