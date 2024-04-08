@@ -18,6 +18,8 @@ const userLoged = document.querySelector('.user-btn-container');
 const loggedUser = document.querySelector('.logged-user');
 const logout = document.querySelector('.logout');
 
+const sidebar = document.querySelector('.sidebar');
+
 let isInedit = {
   editFlag: false,
   editId: null,
@@ -51,6 +53,7 @@ async function showNotes() {
   if(NotesAPI.getAllNotes().length === 0){
     changeMain("remove");
   }
+  sidebar.classList.add("show-sidebar");
   const notes = await NotesAPI.getAllNotes();
   notesList.innerHTML = "";
   notes.forEach(element => {
@@ -149,6 +152,7 @@ async function deleteNote() {
 }
 function createNewNote(){
   const userToken = localStorage.getItem('token');
+  sidebar.classList.remove("show-sidebar");
   console.log(userToken)
   if(userToken == null){
     window.location.href = 'login.html';
