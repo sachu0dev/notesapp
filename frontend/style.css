@@ -49,14 +49,14 @@ textarea:focus, input:focus{
 html,body{
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--background);
   position: relative;
 }
 .container{
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: 18rem 1fr;
   background-color: var(--background);
 }
 /* sidebar */
@@ -327,6 +327,7 @@ html,body{
   font-size: 2rem;
   border-radius: 50%;
   box-shadow: var(--box-shadow);
+  z-index: 100000;
 }
 .creat-note{
   position: absolute;
