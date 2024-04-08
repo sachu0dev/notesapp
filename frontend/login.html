@@ -11,17 +11,23 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <!-- style -->
     <link rel="stylesheet" href="login.css" />
     <title></title>
   </head>
   <body>
+    <a class="back-home" href="index.html">back to home</a>
     <!-- scripts -->
     <div class="login-signup l-attop" id="login">
       <div class="login-signup-title">LOG IN</div>
       <div class="login-signup-content">
         <div class="input-name">
-          <h2>Email</h2>
+          <p>Email</p>
         </div>
         <input
           type="text"
@@ -30,7 +36,7 @@
           class="field-input log-email-input"
         />
         <div class="input-name input-margin">
-          <h2>Password</h2>
+          <p>Password</p>
         </div>
         <input
           type="text"
@@ -38,30 +44,20 @@
           value=""
           class="field-input log-pass-input"
         />
-        <div class="input-r">
-          <div class="check-input">
-            <input
-              type="checkbox"
-              id="remember-me-2"
-              name="rememberme"
-              value=""
-              class="checkme"
-            />
-            <label class="remmeberme-blue" for="remember-me-2"></label>
-          </div>
-          <div class="rememberme">
-            <label for="remember-me-2">Remember Me</label>
-          </div>
+        <div class="input-r"></div>
+        <button class="submit-btn login">Login</button>
+        <div class="change-login-signin">
+          <p>or</p>
+          <button class="submit-btn to-signup">Create account</button>
         </div>
-        <button class="submit-btn login">Enter</button>
       </div>
     </div>
 
-    <div class="login-signup s-atbottom" id="signup">
+    <div class="login-signup s-atbottom show-login-signup" id="signup">
       <div class="login-signup-title">SIGN UP</div>
       <div class="login-signup-content">
         <div class="input-name">
-          <h2>Username</h2>
+          <p>Username</p>
         </div>
         <input
           type="text"
@@ -70,7 +66,7 @@
           class="field-input sign-username-input"
         />
         <div class="input-name input-margin">
-          <h2>E-Mail</h2>
+          <p>E-Mail</p>
         </div>
         <input
           type="text"
@@ -79,7 +75,7 @@
           class="field-input sign-email-input"
         />
         <div class="input-name input-margin">
-          <h2>Password</h2>
+          <p>Password</p>
         </div>
         <input
           type="text"
@@ -87,10 +83,17 @@
           value=""
           class="field-input sign-pass-input"
         />
-
-        <button class="submit-btn signup">Enter</button>
+      </div>
+      <button class="submit-btn signup">Signup</button>
+      <div class="change-login-signin">
+        <p>or</p>
+        <button class="submit-btn to-login">Login</button>
       </div>
     </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="login.js"></script>
   </body>
 </html>

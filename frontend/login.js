@@ -5,12 +5,30 @@ const email = document.querySelector('.log-email-input');
 const password = document.querySelector('.log-pass-input');
 const loginBtn = document.querySelector('.login');
 const signupBtn = document.querySelector('.signup');
+const showLogin = document.querySelector(".to-login");
+const showSignup = document.querySelector(".to-signup");
 
+const loginContainer = document.querySelector(".l-attop ");
+const signupContainer = document.querySelector(".s-atbottom ")
 
 
 
 loginBtn.addEventListener("click", login);
 signupBtn.addEventListener("click", signup);
+
+showLogin.addEventListener("click", showLoginFun);
+showSignup.addEventListener("click", showSignupFun);
+
+function showLoginFun(){
+  loginContainer.classList.add("show-login-signup");
+  signupContainer.classList.remove("show-login-signup")
+}
+
+function showSignupFun(){
+  loginContainer.classList.remove("show-login-signup");
+  signupContainer.classList.add("show-login-signup")
+}
+
 
 async function login() {
   try {

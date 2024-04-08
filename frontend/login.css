@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;900&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+:root{
+  --black:#192a56;
+  --light-color:#666;
+  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+  --ast-white: #f9fcfb;
+  --primary: #bb86fc;
+  --primary-variant: #3700b3;
+  --secondary: #03dac6;
+  --background: #1c1c1c;
+  --background1: #121212;
+  --lightbackground: #585757;
+  --pinkbackground: #ee645b;
+  --bluebackground: #168fff;
+  --greenbackround: #17cb49;
+  --yellowbackground: #ff9f2d;
+  --redbackground: #f74141;
+  --blackbackground:#000;
+  --whitebackground: #fff;
+  --main: #0085ff;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none; border: none;
+  transition: all .2s linear;
+  list-style-type: none;
+  font-family: 'Roboto', sans-serif;
+  color: var(--ast-white);
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background);
+  position: relative;
+}
+.back-home{
+  position: absolute;
+  font-size: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+  color: var(--ast-white);
+  background-color: var(--background1);
+  padding: .7rem 1rem;
+  border-radius: .5rem;
+}
+
+.login-signup{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background1);
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+.login-signup-title{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem;
+}
+
+.input-name{
+  font-size: 1rem;
+}
+input{
+  padding: 0.5rem 1rem;
+  color: black;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.submit-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: black;
+  background-color: var(--ast-white);
+  margin-bottom: 1rem;
+  margin-top: .5rem;
+}
+
+.change-login-signin{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+.show-login-signup{
+  display: flex;
+}

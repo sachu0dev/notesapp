@@ -77,6 +77,20 @@ async function saveNote() {
   console.log(note)
 
   await NotesAPI.saveNote(note);
+  Toastify({
+    text: "note created successfully",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "bottom", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "#1c1c1c",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
   notesTitleInput.value = "";
   notesBodyInput.value = "";
   showNotes();
@@ -104,6 +118,20 @@ async function editNote(event) {
 async function deleteNote() {
   changeMain("remove");
   await NotesAPI.deleteNote(isInedit.editId);
+  Toastify({
+    text: "note deleted successfully",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "bottom", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "#f74141",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
   isInedit.editId = null;
   notesTitleInput.value = "";
   notesBodyInput.value = "";
@@ -111,12 +139,20 @@ async function deleteNote() {
   isInedit.editFlag = false;
 }
 function createNewNote(){
+  const userToken = localStorage.getItem('token');
+  console.log(userToken)
+  if(userToken == null){
+    window.location.href = 'login.html';
+    console.log("reached");
+    return;
+  }
   if(notesTitleInput.value === "" || notesBodyInput.value === ""){
 
   } else {
 
     saveNote();
   }
+
     createNote.classList.remove("show-welcome");
     welcome.classList.remove("show-welcome");
     clickArow.classList.remove("show-welcome");
