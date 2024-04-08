@@ -36,7 +36,7 @@ async function login() {
       email: email.value,
       password: password.value,
     }
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('https://notesapp-five-steel.vercel.app/login', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ async function signup() {
       password: Spassword.value,
       username: Susername.value
     }
-      const response = await fetch('http://localhost:3000/signup', {
+      const response = await fetch('https://notesapp-five-steel.vercel.app/signup', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
