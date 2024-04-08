@@ -1,7 +1,6 @@
 import NotesAPI from './NotesAPI.js';
 const colors = ['pink', "blue", "green", "yellow", "red"];
-// NotesAPI.deleteNote(703830628);
-// console.log(NotesAPI.getAllNotes());
+
 const notesList = document.querySelector(".notes-preview");
 const notesTitleInput = document.querySelector(".notes-title");
 const notesBodyInput = document.querySelector(".notes-body");
@@ -112,7 +111,6 @@ async function saveNote() {
 async function editNote(event) {
     changeMain("add");
   const notes = await NotesAPI.getAllNotes();
-  console.log(event)
 
   const noteBox = event;
   const id = noteBox.dataset.id;
@@ -152,10 +150,8 @@ async function deleteNote() {
 function createNewNote(){
   const userToken = localStorage.getItem('token');
   sidebar.classList.remove("show-sidebar");
-  console.log(userToken)
   if(userToken == null){
     window.location.href = 'login.html';
-    console.log("reached");
     return;
   }
   if(notesTitleInput.value === "" || notesBodyInput.value === ""){

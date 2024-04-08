@@ -25,7 +25,6 @@ const token = localStorage.getItem('token');
       },
       body: JSON.stringify(noteToSave)
     })
-    console.log("something");
     const data = await response.json();
   }
 
