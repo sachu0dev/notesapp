@@ -300,6 +300,7 @@ html,body{
   right: 0;
   overflow: hidden;
   display: none;
+  z-index: -100;
 }
 .show-first-note{
   display: block;
@@ -333,6 +334,7 @@ html,body{
   color: #fff;
   font-size: 2rem;
   display: none;
+  z-index: -100;
 }
 .creat-note img{
   width: 7rem;
