@@ -56,7 +56,7 @@ html,body{
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: 18rem 1fr;
+  grid-template-columns:  1fr 18rem;
   background-color: var(--background);
 }
 /* sidebar */
@@ -298,7 +298,7 @@ html,body{
   position: absolute;
   height: 10rem;
   bottom: 8.5rem;
-  right: 0;
+  left: 0;
   overflow: hidden;
   display: none;
   z-index: 1;
@@ -317,7 +317,7 @@ html,body{
 .add-note-btn{
   position: absolute;
   bottom: 4.5rem;
-  right: 4.5rem;
+  left: 4.5rem;
   background-color: var(--background1);
   width: 4rem;
   height: 4rem;
@@ -332,13 +332,14 @@ html,body{
 .creat-note{
   position: absolute;
   bottom: 5rem;
-  right: 9.5rem;
+  left: 9.5rem;
   color: #fff;
   font-size: 2rem;
   display: none;
   z-index: 1;
 }
 .creat-note img{
+  transform: scaleX(-1);
   width: 7rem;
   height: 7rem;
   object-fit: contain;
